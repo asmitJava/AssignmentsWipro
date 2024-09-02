@@ -1,0 +1,11 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+
+<html>
+<head>
+    <title>Claim Success</title>
+</head>
+<body>
+    <h1>Claim Submitted Successfully!</h1>
+    <p>Your claim has been submitted successfully. We will review your claim and contact you soon.</p>
+</body>
+</html>

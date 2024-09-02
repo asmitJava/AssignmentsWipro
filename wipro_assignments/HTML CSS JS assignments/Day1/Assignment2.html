@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        form {
+            margin: 20px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Sample Page</h1>
+    </header>
+
+    <section>
+        <h2>About This Page</h2>
+        <p>This is a Html page including the use of headings,paragraphs,artile,section tag, a table and a form </p>
+    </section>
+
+    <article>
+        <h2>Product Table</h2>
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>Product_name</th>
+                    <th>Price</th>
+                    <th>Brande_name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>PC</td>
+                    <td>50000</td>
+                    <td>HP</td>
+                </tr>
+                <tr>
+                    <td>Playstation</td>
+                    <td>60000</td>
+                    <td>Sony</td>
+                </tr>
+                <tr>
+                    <td>Mobile</td>
+                    <td>30000</td>
+                    <td>Samsung</td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+
+    <section>
+        <h2>Contact Form</h2>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+        </form>
+    </section>
+    <button type="submit"><div>Submit</div></button>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<dependencies>
+    <!-- Spring MVC dependencies -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+    </dependency>
+
+    <!-- Thymeleaf dependencies -->
+    <dependency>
+        <groupId>org.thymeleaf</groupId>
+        <artifactId>thymeleaf-spring5</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.thymeleaf.extras</groupId>
+        <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+    </dependency>
+</dependencies>

@@ -1,0 +1,36 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<html>
+<head>
+    <title>Claim Form</title>
+</head>
+<body>
+    <h1>Claim Form</h1>
+    <form:form modelAttribute="claim" method="post">
+        <table>
+            <tr>
+                <td><form:label path="policyNumber">Policy Number:</form:label></td>
+                <td><form:input path="policyNumber"/></td>
+                <td><form:errors path="policyNumber" cssClass="error"/></td>
+            </tr>
+            <tr>
+                <td><form:label path="claimDate">Claim Date:</form:label></td>
+                <td><form:input path="claimDate"/></td>
+                <td><form:errors path="claimDate" cssClass="error"/></td>
+            </tr>
+            <tr>
+                <td><form:label path="claimAmount">Claim Amount:</form:label></td>
+                <td><form:input path="claimAmount"/></td>
+                <td><form:errors path="claimAmount" cssClass="error"/></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Submit Claim"/>
+                </td>
+            </tr>
+        </table>
+    </form:form>
+</body>
+</html>

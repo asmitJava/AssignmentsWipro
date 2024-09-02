@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Policy Management Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<!-- Bootstrap JavaScript and jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Your Custom JavaScript -->
+
+<script>
+  // Sample data (replace with actual data fetching logic)
+
+// Sample data (replace with actual data)
+const policies = [
+    { id: 1, name: "Policy A", status: "Active" },
+    { id: 2, name: "Policy B", status: "Inactive" },
+    // ...
+];
+
+// Function to populate policy list
+function populatePolicyList() {
+    const policyList = document.getElementById('policyList');
+    policies.forEach(policy => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${policy.id}</td>
+            <td>${policy.name}</td>
+            <td>${policy.status}</td>
+            <td><button class="btn btn-primary">View Details</button></td>
+        `;
+        policyList.appendChild(row);
+    });
+}
+
+// Function to sort policies (implement sorting logic)
+function sortPolicies(column) {
+    // Sorting logic based on selected column
+}
+
+// Function to show policy details (using a modal)
+function showPolicyDetails(policyId) {
+    // Fetch policy details based on policyId
+    // Populate modal content
+    // Show modal
+}
+
+// Event listeners for sorting, filtering, and other interactions
+// ...
+
+populatePolicyList();
+
+  
+  
+  
+  
+</script>
+
+
+
+
+
+
+
+
+<div class="container-fluid">
+    <h1 class="text-center my-4">Policy Management Dashboard</h1>
+
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action" data-toggle="tab">Overview</a>
+                <a href="#policies" class="list-group-item list-group-item-action active" data-toggle="tab">Policies</a>
+                <a href="#reports" class="list-group-item list-group-item-action" data-toggle="tab">Reports</a>
+                <a href="#settings" class="list-group-item list-group-item-action" data-toggle="tab">Settings</a>
+              <a href="#additionalinfo" class="list-group-item list-group-item-action" data-toggle="tab">Additional Info</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-md-9">
+            <div class="tab-content">
+                <div class="tab-pane fade" id="overview">
+                    <h3>Overview</h3>
+                    <p>Dashboard overview content...</p>
+                </div>
+
+                <div class="tab-pane fade show active" id="policies">
+                    <h3>Policies</h3>
+                    <div class="form-group">
+                        <label for="sortPolicies">Sort Policies</label>
+                        <select id="sortPolicies" class="form-control">
+                            <option value="name">Name</option>
+                            <option value="date">Date</option>
+                        </select>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Policy A</td>
+                                <td>2024-08-01</td>
+                                <td><button class="btn btn-primary viewDetails" data-id="1">View Details</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Policy B</td>
+                                <td>2024-07-15</td>
+                                <td><button class="btn btn-primary viewDetails" data-id="2">View Details</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tab-pane fade" id="reports">
+                    <h3>Reports</h3>
+                    <p>Reports content...</p>
+                </div>
+
+                <div class="tab-pane fade" id="settings">
+                    <h3>Settings</h3>
+                    <p>Settings content...</p>
+                </div>
+                
+
+                <div class="tab-pane fade" id="additionalinfo">
+                  
+                  <h3>Additional Info</h3>
+                  <div>
+                    <form>
+                  <div class="mb-3">
+                    <label for="filterStatus" class="form-label">Filter by Status</label>
+                    <select class="form-select" id="filterStatus">
+                      <option value="all">All</option>
+                      <option value="active">Active</option>
+                      <option value="inactive">Inactive</option>
+                    </select>
+                  </div>
+                  <button type="button" class="btn btn-primary" onclick="filterPolicies()">Filter</button>
+                </form>
+                <br>
+                <button type="button" class="btn btn-success" onclick="showNewPolicyModal()">Create New Policy</button>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Detailed View -->
+<div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailsModalLabel">Policy Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Details will be populated here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

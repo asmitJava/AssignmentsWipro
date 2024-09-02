@@ -1,0 +1,34 @@
+Create Table Query:
+
+CREATE TABLE products (
+  id INT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  price DECIMAL(10, 2) NOT NULL,
+ 
+);
+
+Insert Data Query:
+
+INSERT INTO products VALUES
+  (1, 'Playstation', 80000),
+  (2, 'PC', 100000),
+  (3, 'Laptop', 70000);
+
+Retrieve All Product Details Query:
+
+SELECT * FROM products;
+
+Retrieve Id and Product Name Query:
+
+SELECT id, name FROM products;
+
+Update Product Query:
+
+UPDATE products
+SET price = 24.99
+WHERE id = 2;
+
+Delete Product Query:
+
+DELETE FROM products
+WHERE id = 1;

@@ -1,0 +1,58 @@
+DDL Operations
+
+Create Table Query:
+
+CREATE TABLE product (
+  id INT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  category VARCHAR(255) NOT NULL,
+  price DECIMAL(10, 2) NOT NULL
+);
+
+Drop Table Query:
+
+DROP TABLE product;
+
+Alter Table Query (Add a new column):
+
+ALTER TABLE product
+ADD COLUMN description TEXT;
+
+Rename Table Query:
+
+RENAME TABLE product TO products;
+
+Queries
+
+Find product whose category is Electronics:
+
+SELECT * FROM product
+WHERE category = 'Electronics';
+
+Find products whose price range is between 5000 and 10000:
+
+SELECT name, price FROM product
+WHERE price BETWEEN 5000 AND 10000;
+
+Display all Electronic category items with price more than 2000, sorted by price in descending order:
+
+SELECT * FROM product
+WHERE category = 'Electronics' AND price > 2000
+ORDER BY price DESC;
+
+Sort products by name:
+
+SELECT * FROM product
+ORDER BY name;
+
+Count of products based on category:
+
+SELECT category, COUNT(*) AS count
+FROM product
+GROUP BY category;
+
+Display all products except Electronics category:
+
+SELECT * FROM product
+WHERE category != 'Electronics';
+

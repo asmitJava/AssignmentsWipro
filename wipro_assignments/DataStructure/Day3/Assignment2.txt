@@ -1,0 +1,52 @@
+package com.anudip.list;
+
+class ListNode {
+	int val;
+	ListNode next;
+
+	ListNode(int x) {
+		val = x;
+	}
+}
+
+public class Ll_duplicates {
+	public ListNode deleteDuplicates(ListNode head) {
+		ListNode current = head;
+		while (current != null && current.next != null) {
+			if (current.next.val == current.val) {
+				current.next = current.next.next;
+			} else {
+				current = current.next;
+			}
+		}
+		return head;
+	}
+
+	public static void main(String[] args) {
+		Ll_duplicates solution = new Ll_duplicates();
+
+		ListNode head = new ListNode(1);
+		head.next = new ListNode(1);
+		head.next.next = new ListNode(2);
+		head.next.next = new ListNode(2);
+		head.next.next.next = new ListNode(3);
+		head.next.next.next.next = new ListNode(3);
+
+		head = solution.deleteDuplicates(head);
+
+		while (head != null) {
+			System.out.print(head.val + " ");
+			head = head.next;
+		}
+	}
+}
+
+
+Algorithm:
+
+1 . Initialize a pointer current to the head of the linked list.
+2 .Iterate through the linked list until current or current.next becomes null.
+3 .Inside the loop, check if the current node's value is equal to the next node's value.
+4 .If they are equal, remove the next node by updating current.next to current.next.next.
+5 .If they are not equal, move the current pointer to the next node.
+6 .Return the head of the modified linked list.

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <div id="formToggle">
+            <button id="showLogin">Login</button>
+            <button id="showRegister">Register</button>
+        </div>
+        
+        <!-- Registration Form -->
+        <form id="registrationForm" aria-labelledby="registrationHeading">
+            <h2 id="registrationHeading">Register</h2>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <!-- Login Form -->
+        <form id="loginForm" aria-labelledby="loginHeading" style="display:none;">
+            <h2 id="loginHeading">Login</h2>
+
+            <label for="loginUsername">Username:</label>
+            <input type="text" id="loginUsername" name="username" required>
+
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script src="validation.js"></script>
+</body>
+</html>

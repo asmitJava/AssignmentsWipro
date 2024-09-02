@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample HTML Page with Bootstrap</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+            <a class="navbar-brand" href="#">Sample Page</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#table">Data Table</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Content -->
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <section id="about">
+                    <h2>About This Page</h2>
+                    <p>This page is a demonstration of basic HTML elements including headings, paragraphs, semantic tags, tables, and forms, integrated with Bootstrap for better styling and responsiveness.</p>
+                </section>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <article id="table">
+                    <h2>Product Table</h2>
+                  
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product_name</th>
+                                <th>Price</th>
+                                <th>Brande_name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PC</td>
+                                <td>50000</td>
+                                <td>HP</td>
+                            </tr>
+                            <tr>
+                                <td>Playstation</td>
+                                <td>60000</td>
+                                <td>Sony</td>
+                            </tr>
+                            <tr>
+                                <td>Mobile</td>
+                                <td>30000</td>
+                                <td>Samsung</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                       </article>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <section id="contact">
+                    <h2>Contact Form</h2>
+                    <p>Please fill out the form below to get in touch:</p>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+
+
+    </div>
+
+ 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    
+</body>
+</html>

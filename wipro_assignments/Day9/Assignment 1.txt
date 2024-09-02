@@ -1,0 +1,43 @@
+Tables:
+
+1. Books
+    - BookID (primary key, NOT NULL, UNIQUE)
+    - Title (NOT NULL)
+    - Author (NOT NULL)
+    - Publisher (NOT NULL)
+    - PublicationYear (NOT NULL, CHECK (PublicationYear >= 1900))
+    - ISBN (NOT NULL, UNIQUE)
+2. Authors
+    - AuthorID (primary key, NOT NULL, UNIQUE)
+    - Name (NOT NULL)
+    - BirthYear (NOT NULL, CHECK (BirthYear >= 1900))
+3. Patrons
+    - PatronID (primary key, NOT NULL, UNIQUE)
+    - Name (NOT NULL)
+    - Email (NOT NULL, UNIQUE)
+    - Phone (NOT NULL)
+4. Loans
+    - LoanID (primary key, NOT NULL, UNIQUE)
+    - BookID (foreign key referencing Books, NOT NULL)
+    - PatronID (foreign key referencing Patrons, NOT NULL)
+    - LoanDate (NOT NULL)
+    - ReturnDate (NOT NULL)
+5. Returns
+    - ReturnID (primary key, NOT NULL, UNIQUE)
+    - LoanID (foreign key referencing Loans, NOT NULL)
+    - ReturnDate (NOT NULL)
+
+Constraints:
+
+- Books: UNIQUE (ISBN)
+- Authors: UNIQUE (Name)
+- Patrons: UNIQUE (Email)
+- Loans: FOREIGN KEY (BookID) REFERENCES Books(BookID), FOREIGN KEY (PatronID) REFERENCES Patrons(PatronID)
+- Returns: FOREIGN KEY (LoanID) REFERENCES Loans(LoanID)
+
+Relationships:
+
+- A book can have multiple authors (many-to-many): Books-AuthorID-Authors
+- A patron can have multiple loans (one-to-many): Patrons-PatronID-Loans
+- A loan is associated with one book and one patron (many-to-one): Loans-BookID-Books, Loans-PatronID-Patrons
+- A return is associated with one loan (many-to-one): Returns-LoanID-Loans

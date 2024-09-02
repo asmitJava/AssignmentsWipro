@@ -1,0 +1,18 @@
+
+Here's a step-by-step guide to sort a queue of integers using only one additional stack in Java:
+
+Step 1: Create a stack
+
+Create an empty stack to store the elements from the queue. This stack will be used to temporarily hold the elements while sorting.
+
+Step 2: Dequeue elements and push to stack
+
+Dequeue each element from the queue and push it onto the stack. This will reverse the order of the elements, but we'll fix that later.
+
+Step 3: Sort the stack
+
+While the stack is not empty, pop the top element from the stack and compare it with the top element of the queue (if the queue is not empty). If the queue is empty or the top element of the queue is smaller than the popped element, push the popped element back onto the stack. Otherwise, dequeue the top element from the queue and push it onto the stack. Repeat this process until the stack is empty.
+
+Step 4: Enqueue sorted elements
+
+Once the stack is empty, the queue will contain the sorted elements. Dequeue each element from the queue and enqueue it back into the original queue.

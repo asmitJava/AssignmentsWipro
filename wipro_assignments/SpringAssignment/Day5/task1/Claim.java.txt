@@ -1,0 +1,7 @@
+public class Claim {
+    private String policyNumber;
+    private Date claimDate;
+    private double claimAmount;
+
+    // getters and setters
+}

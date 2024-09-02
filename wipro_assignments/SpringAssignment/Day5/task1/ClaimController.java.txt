@@ -1,0 +1,19 @@
+@Controller
+@RequestMapping("/claim")
+public class ClaimController {
+    @RequestMapping(method = RequestMethod.GET)
+    public String showClaimForm(Model model) {
+        Claim claim = new Claim();
+        model.addAttribute("claim", claim);
+        return "claimForm";
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public String processClaimForm(@ModelAttribute @Valid Claim claim, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            return "claimForm";
+        }
+        // process the claim form data
+        return "claimSuccess";
+    }
+}

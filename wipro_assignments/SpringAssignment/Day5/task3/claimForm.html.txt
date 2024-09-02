@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Claim Form</title>
+</head>
+<body>
+    <h1>Claim Form</h1>
+    <form th:object="${claim}" method="post">
+        <table>
+            <tr>
+                <td><label th:for="${claim.policyNumber}">Policy Number:</label></td>
+                <td><input th:field="${claim.policyNumber}" type="text"/></td>
+                <td th:if="${#fields.hasErrors('policyNumber')}" th:errors="${claim.policyNumber}">Error</td>
+            </tr>
+            <tr>
+                <td><label th:for="${claim.claimDate}">Claim Date:</label></td>
+                <td><input th:field="${claim.claimDate}" type="date"/></td>
+                <td th:if="${#fields.hasErrors('claimDate')}" th:errors="${claim.claimDate}">Error</td>
+            </tr>
+            <tr>
+                <td><label th:for="${claim.claimAmount}">Claim Amount:</label></td>
+                <td><input th:field="${claim.claimAmount}" type="number"/></td>
+                <td th:if="${#fields.hasErrors('claimAmount')}" th:errors="${claim.claimAmount}">Error</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Submit Claim"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

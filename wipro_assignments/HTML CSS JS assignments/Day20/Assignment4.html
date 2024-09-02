@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample HTML Page with Flexbox Layout and Animations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        header, footer {
+            width: 100%;
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .content > div {
+            flex: 1 1 45%;
+            box-sizing: border-box;
+            padding: 20px;
+            margin: 10px;
+            background-color: #e4e4e4;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        form {
+            margin: 20px 0;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        @media (max-width: 768px) {
+            .content > div {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content > div {
+                padding: 10px;
+                margin: 5px;
+            }
+
+            header, footer {
+                padding: 5px;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to My Sample Page</h1>
+        </header>
+
+        <div class="content">
+            <div>
+                <section>
+                    <h2>About This Page</h2>
+                    <p>This page is a demonstration of basic HTML elements including headings, paragraphs, semantic tags, tables, and forms.</p>
+                </section>
+            </div>
+
+            <div>
+                <article>
+                    <h2>Product Table</h2>
+                  
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product_name</th>
+                                <th>Price</th>
+                                <th>Brande_name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PC</td>
+                                <td>50000</td>
+                                <td>HP</td>
+                            </tr>
+                            <tr>
+                                <td>Playstation</td>
+                                <td>60000</td>
+                                <td>Sony</td>
+                            </tr>
+                            <tr>
+                                <td>Mobile</td>
+                                <td>30000</td>
+                                <td>Samsung</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </div>
+
+            <div>
+                <section>
+                    <h2>Contact Form</h2>
+                    <p>Please fill out the form below to get in touch:</p>
+                    <form action="#" method="post">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <button type="submit">Submit</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+public class Claim {
+    @NotEmpty(message = "Policy Number is required")
+    private String policyNumber;
+
+    @NotNull(message = "Claim Date is required")
+    @Past(message = "Claim Date must be in the past")
+    private Date claimDate;
+
+    @NotNull(message = "Claim Amount is required")
+    @Min(value = 1, message = "Claim Amount must be at least $1")
+    private double claimAmount;
+
+    // getters and setters
+}
